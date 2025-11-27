@@ -1,4 +1,4 @@
---------CSS RESET--------
+/*--------CSS RESET--------*/
 /* Box sizing rules */
 *,
 *::before,
@@ -73,7 +73,7 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
---------CSS RESET--------
+/*--------CSS RESET--------*/
 body {
   margin: 0;
   padding: 0;
@@ -139,7 +139,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.625rem 1.25rem;
+  padding: 0.6rem 1.25rem;
   background-color: #333;
   color: white;
 }
