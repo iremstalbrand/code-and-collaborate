@@ -16,22 +16,23 @@ function renderProducts() {
 
   const visibleProducts = products.slice(0, itemsToShow);
 
-  visibleProducts.forEach(product => {
-    const card = document.createElement("div");
-    card.className = "product-card";
+ visibleProducts.forEach((product, index) => {
 
-    card.innerHTML = `
-      <img src="${product.picture}" alt="${product.title}" />
-      <div class="product-info">
-        <div class="product-title">${product.title}</div>
-        <div class="product-price">$${product.price}</div>
-      </div>
-    `;
+  const card = document.createElement("a");
+  card.className = "product-card";
+  card.href = `single-product-page.html?id=${index}`;  // ← ADD THIS HERE
 
-    grid.appendChild(card);
-  });
+  card.innerHTML = `
+    <img src="${product.picture}" alt="${product.title}" />
+    <div class="product-info">
+      <div class="product-title">${product.title}</div>
+      <div class="product-price">$${product.price}</div>
+    </div>
+  `;
+
+  grid.appendChild(card);
+});
 }
-
 document.getElementById("load-more-btn").addEventListener("click", () => {
   itemsToShow += 8; // 4 more rows
   renderProducts();
