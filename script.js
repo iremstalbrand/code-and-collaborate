@@ -22,13 +22,13 @@ function renderProducts() {
   card.className = "product-card";
   card.href = `single-product-page.html?id=${index}`;  // ← ADD THIS HERE
 
-  card.innerHTML = `
-    <img src="${product.picture}" alt="${product.title}" />
-    <div class="product-info">
-      <div class="product-title">${product.title}</div>
-      <div class="product-price">$${product.price}</div>
-    </div>
-  `;
+    card.innerHTML = `
+      <img src="${product.picture1}" alt="${product.title}" />
+      <div class="product-info">
+        <div class="product-title">${product.title}</div>
+        <div class="product-price">$${product.price}</div>
+      </div>
+    `;
 
   grid.appendChild(card);
 });
