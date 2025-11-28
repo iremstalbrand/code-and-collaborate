@@ -1,157 +1,157 @@
 [
   {
     "id": 1,
-     "type": "apparel",
+    "type": "apparel",
     "title": "Classic White T-Shirt",
     "price": "15.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/beigePulloverA.png",
+    "picture2": "images/beigePulloverB.png"
   },  
   {
     "id": 2,
     "type": "apparel",
     "title": "",
     "price": "45.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/blackDressA.png",
+    "picture2": "images/blackDressB.png"
   },
   {
     "id": 3,
     "type": "apparel",
     "title": "Blue Denim Jacket",
     "price": "65.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/blackJeansA.png",
+    "picture2": "images/blackJeansB.png"
   },
   { 
     "id": 4,
     "type": "accessory",
     "title": "Red Plaid Scarf",
     "price": "12.50",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/blackTrousersA.png",
+    "picture2": "images/blackTrousersB.png"
   },
   {
     "id": 5,
     "type": "footwear",
     "title": "Leather Ankle Boots",
     "price": "75.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/blueJeansA.png",
+    "picture2": "images/blueJeansB.png"
   },  
   {
     "id": 6,
     "type": "accessory",
     "title": "Striped Crew Socks",
     "price": "8.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/cardiganA.png",
+    "picture2": "images/cardiganB.png"
   },
   {                       
     "id": 7,
     "type": "apparel",
     "title": "Gray Hoodie",
     "price": "35.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/denimSkirtA.png",
+    "picture2": "images/denimSkirtB.png"
   },
   {
     "id": 8,
     "type": "apparel",
     "title": "Beige Chino Shorts",
     "price": "28.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/dressA.png",
+    "picture2": "images/dressB.png"
   },
   {
     "id": 9,
     "type": "accessory",
     "title": "Brown Leather Belt",
     "price": "22.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/greenCardiganA.png",
+    "picture2": "images/greenCardiganB.png"
   },
   {
     "id": 10,
     "type": "accessory",
     "title": "Navy Blue Beanie",
     "price": "14.00",
-    "picture1": "",
-    "picture2": "",
+    "picture1": "images/greenShirtA.png",
+    "picture2": "images/greenShirtB.png"
   },
   {
     "id": 11,
     "type": "footwear",
     "title": "White Canvas Sneakers",
     "price": "40.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/shirtA.png",
+    "picture2": "images/shirtB.png"
   },
   {
     "id": 12,
     "type": "accessory",
     "title": "Black Leather Backpack",
     "price": "55.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/skirtA.png",
+    "picture2": "images/skirtB.png"
   },
   {
     "id": 13,
     "type": "apparel",
     "title": "Green Cargo Pants",
     "price": "48.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/stripeShirtA.png",
+    "picture2": "images/stripeShirtB.png"
   },
   { 
     "id": 14,
     "type": "apparel",
     "title": "Yellow Raincoat",
     "price": "60.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/summerDressA.png",
+    "picture2": "images/summerDressB.png"
   },
   {
     "id": 15,
     "type": "",
     "title": "Floral Print Dress",
     "price": "50.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/summerDress2A.png",
+    "picture2": "images/summerDress2B.png"
   },
   {"id": 16,
     "type": "accessory",
     "title": "Black Sunglasses",
     "price": "18.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/sweatshirtA.png",
+    "picture2": "images/sweatshirtB.png"
   },
    {"id": 17,
     "type": "accessory",
     "title": "Black Sunglasses",
     "price": "18.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/trousersA.png",
+    "picture2": "images/trousersB.png"
     },
    {"id": 18,
     "type": "accessory",
     "title": "Black Sunglasses",
     "price": "18.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/whitePulloverA.png",
+    "picture2": "images/whitePulloverB.png"
   },
    {"id": 19,
     "type": "",
     "title": "Black Sunglasses",
     "price": "18.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/whiteShirtA.png",
+    "picture2": "images/whiteShirtB.png"
   },
    {"id": 20,
     "type": "",
     "title": "Black Sunglasses",
     "price": "18.00",
-    "picture1": "",
-    "picture2": ""
+    "picture1": "images/whiteTshirtA.png",
+    "picture2": "images/whiteTshirtB.png"
   }
 ]
