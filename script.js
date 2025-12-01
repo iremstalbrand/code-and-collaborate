@@ -42,7 +42,6 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
   renderProducts();
 });
 
-// Function to show single product details on the same page
 function showProductDetails(productId) {
   const product = products.find((p) => p.id === productId);
   const detailsContainer = document.getElementById("product-details");
@@ -52,59 +51,83 @@ function showProductDetails(productId) {
     return;
   }
 
-  // Render product details
+  // Inject main HTML structure
   detailsContainer.innerHTML = `
     <div class="single-product">
 
-  <!-- Product Image Section -->
-  <div class="product-image-box">
-    <img src="${product.picture1}" class="main-product-img" alt="${product.title}">
-  </div>
+      <!-- Product Image -->
+      <div class="product-image-box">
+        <img src="${product.picture1}" class="main-product-img" alt="${product.title}">
+      </div>
 
-  <!-- Title, Price, Add to Cart -->
-  <div class="product-main-info">
-    <h3 class="product-title">${product.title}</h3>
+      <!-- Title, Price, Add to Cart -->
+      <div class="product-main-info">
+        <h3 class="product-title">${product.title}</h3>
+        <div class="price-cart-row">
+          <span class="product-price">${product.price} :-</span>
+          <button class="add-cart-btn">Add to cart</button>
+        </div>
+      </div>
 
-    <div class="price-cart-row">
-      <span class="product-price">${product.price} :-</span>
-      <button class="add-cart-btn">Add to cart</button>
-    </div>
-  </div>
+      <!-- Accordion -->
+      <div class="accordion">
 
-  <!-- Accordion Sections -->
-  <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">Size <span>›</span></div>
+          <div class="accordion-content" id="size-container"></div>
+        </div>
 
-    <div class="accordion-item">
-      <div class="accordion-header">Size <span>›</span></div>
-      <div class="accordion-content">
-        ${product.sizes.map(size => `<span class="size-chip">${size}</span>`).join("")}
+        <div class="accordion-item">
+          <div class="accordion-header">Material <span>›</span></div>
+          <div class="accordion-content">
+            <p>${product.material}</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">Product Description <span>›</span></div>
+          <div class="accordion-content">
+            <p>${product.description}</p>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="accordion-item">
-      <div class="accordion-header">Material <span>›</span></div>
-      <div class="accordion-content">
-        <p>${product.material}</p>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <div class="accordion-header">Product Description <span>›</span></div>
-      <div class="accordion-content">
-        <p>${product.description}</p>
-        
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
   `;
 
   // Hide product grid and load more button
   document.getElementById("product-grid").style.display = "none";
   document.getElementById("load-more-btn").style.display = "none";
+
+  // Populate sizes dynamically
+  const sizeContainer = document.getElementById("size-container");
+  if (product.sizes && product.sizes.length > 0) {
+    product.sizes.forEach(size => {
+      const span = document.createElement("span");
+      span.className = "size-chip";
+      span.textContent = size;
+      sizeContainer.appendChild(span);
+    });
+  } else {
+    sizeContainer.innerHTML = "<p>No sizes available.</p>";
+  }
+
+  // Accordion toggle functionality
+  const headers = detailsContainer.querySelectorAll(".accordion-header");
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      const item = header.parentElement;
+      const content = header.nextElementSibling;
+
+      item.classList.toggle("active");
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null; // collapse
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px"; // expand
+      }
+    });
+  });
 
   // Back button restores grid
   document.getElementById("back-btn").addEventListener("click", () => {
@@ -113,3 +136,5 @@ function showProductDetails(productId) {
     document.getElementById("load-more-btn").style.display = "block";
   });
 }
+
+

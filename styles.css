@@ -172,15 +172,17 @@ body {
 
 /* IMAGE */
 .product-image-box {
-  width: 100%;
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-center;
+  margin-bottom: 20px;
+  
 }
 
 .main-product-img {
   width: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  height: auto;
 }
 
 /* TITLE + PRICE + BUTTON */
@@ -190,7 +192,7 @@ body {
 }
 
 .product-title {
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -252,3 +254,34 @@ body {
   border-radius: 6px;
   font-size: 14px;
 }
+
+.accordion-content {
+  max-height: 0;           /* Hidden by default */
+  overflow: hidden;        /* Hide extra content */
+  transition: max-height 0.3s ease;
+}
+
+.accordion-header {
+  cursor: pointer;         /* Show hand cursor */
+  padding: 10px;
+  background-color: white;
+}
+
+.size-chip {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.arrow {
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .arrow {
+  transform: rotate(90deg); /* Rotate arrow when open */
+}
+
+
