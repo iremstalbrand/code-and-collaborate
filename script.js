@@ -54,31 +54,52 @@ function showProductDetails(productId) {
 
   // Render product details
   detailsContainer.innerHTML = `
-    <div class="product-container">
+    <div class="single-product">
 
-      <!-- Left Side Images -->
-      <div class="product-images">
-        <img class="main-image" src="${product.picture1}" alt="${product.title}">
-        <div class="thumbnail-row">
-          <img class="thumb" src="${product.picture1}" alt="">
-          <img class="thumb" src="${product.picture2}" alt="">
-        </div>
-      </div>
+  <!-- Product Image Section -->
+  <div class="product-image-box">
+    <img src="${product.picture1}" class="main-product-img" alt="${product.title}">
+  </div>
 
-      <!-- Right Side Info -->
-      <div class="product-info-box">
-        <h2>${product.title}</h2>
-        <p class="price">$${product.price}</p>
-        <p class="description">${product.description}</p>
-        <p><strong>Material:</strong> ${product.material}</p>
-        <p><strong>Sizes:</strong></p>
-        <div class="sizes">
-          ${product.sizes.map((size) => `<span class="size-option">${size}</span>`).join("")}
-        </div>
-        <button id="back-btn">← Back to Products</button>
-      </div>
+  <!-- Title, Price, Add to Cart -->
+  <div class="product-main-info">
+    <h3 class="product-title">${product.title}</h3>
 
+    <div class="price-cart-row">
+      <span class="product-price">${product.price} :-</span>
+      <button class="add-cart-btn">Add to cart</button>
     </div>
+  </div>
+
+  <!-- Accordion Sections -->
+  <div class="accordion">
+
+    <div class="accordion-item">
+      <div class="accordion-header">Size <span>›</span></div>
+      <div class="accordion-content">
+        ${product.sizes.map(size => `<span class="size-chip">${size}</span>`).join("")}
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Material <span>›</span></div>
+      <div class="accordion-content">
+        <p>${product.material}</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Product Description <span>›</span></div>
+      <div class="accordion-content">
+        <p>${product.description}</p>
+        
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
   `;
 
   // Hide product grid and load more button
