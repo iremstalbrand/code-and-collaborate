@@ -85,8 +85,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  border-top: 3px solid #000000;
-  border-left: 3px solid #000000;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
   margin: 20px;
 }
 
@@ -95,8 +95,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 3px solid #000000;
-  border-right: 3px solid #000000;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
 }
 
 .product-card img {
@@ -128,8 +128,8 @@ body {
   margin: 15px 0;
   border: none;
   border-radius: 6px;
-  background: #000000;
-  color: #ffffff;
+  background: black;
+  color: white;
   font-size: 16px;
 }
 
@@ -264,14 +264,14 @@ body {
 .accordion-header {
   cursor: pointer;         /* Show hand cursor */
   padding: 10px;
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .size-chip {
   display: inline-block;
   margin: 5px;
   padding: 5px 10px;
-  background-color: oklch(89.755% 0.0001 271.152);
+  background-color: #ddd;
   border-radius: 5px;
 }
 
