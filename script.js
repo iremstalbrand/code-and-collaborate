@@ -9,10 +9,11 @@ fetch("products.json")
   .then(response => response.json())
   .then(data => {
     products = data;
+    addSaleBanner();
     renderProducts();
   })
   .catch(err => console.error("Could not load JSON:", err));
-
+  
 function addSaveButtonListeners() {
   document.querySelectorAll('.save-btn').forEach(save => {
     save.addEventListener('click', () => {
@@ -46,6 +47,10 @@ function renderProducts() {
       </span>
     `;
 
+    card.addEventListener('click', () => {
+      window.location.href = `product.html?id=${product.id}`;
+    });
+
     grid.appendChild(card);
   });
 
@@ -56,3 +61,5 @@ document.getElementById("load-more-btn").addEventListener("click", () => {
   itemsToShow += 8; // 4 more rows
   renderProducts();
 });
+
+
