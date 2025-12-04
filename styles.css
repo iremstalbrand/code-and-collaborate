@@ -63,7 +63,7 @@ textarea, select {
   font-size: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
+/* Make sure text areas without a rows attribute are not tiny */
 textarea:not([rows]) {
   min-height: 10em;
 }
@@ -83,10 +83,10 @@ body {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  border-top: 3px solid black;
-  border-left: 3px solid black;
+  border-top: 1.5px solid black;
+  border-left: 1.5px solid black;
   margin: 20px;
 }
 
@@ -95,8 +95,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 3px solid black;
-  border-right: 3px solid black;
+  border-bottom: 1.5px solid black;
+  border-right: 1.5px solid black;
   position: relative;
 }
 
@@ -123,6 +123,16 @@ body {
   color: #333;
 }
 
+.sale-banner {
+  display: block;
+  margin: 20px 0;
+}
+
+.sale-banner img {
+  width: 100%;
+  height: auto;
+}
+
 #load-more-btn {
   width: 100%;
   padding: 14px;
@@ -133,6 +143,100 @@ body {
   color: white;
   font-size: 16px;
 }
+
+@media (max-width: 768px){
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ----NAVBAR---- */
+
+header {
+  background-color: #fff;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu{
+  display: flex;
+  top: 100%;
+  justify-content: center;
+  align-items: left;
+  gap: 60px;
+}
+
+.nav-branding {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #333;
+}
+
+@media (max-width: 768px){
+  .hamburger{
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu{
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    text-align: left;
+    transition: 0.3s;
+  }
+
+  .nav-item{
+    margin: 15px 0;
+  }
+  .nav-menu.active{
+    left: 0;
+  }
+}
+
+/* ----NAVBAR---- */
 
 /* ----HEADER---- */
 
@@ -147,17 +251,17 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  padding-left: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .right-icons {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.rem;
 }
 
 .right-icons img {
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .hamburger-menu {
   width: 1.5rem;
