@@ -111,5 +111,48 @@
 .accordion-item.active .arrow {
   transform: rotate(90deg); /* Rotate arrow when open */
 }
+/*slide*/
+.slider-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.main-product-img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  display: none; /* hide all images */
+}
+
+.main-product-img.active {
+  display: block; /* only show active one */
+}
+
+/* BUTTONS */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.slide-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
 
