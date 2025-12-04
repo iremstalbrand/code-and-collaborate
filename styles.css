@@ -63,7 +63,7 @@ textarea, select {
   font-size: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
+/* Make sure text areas without a rows attribute are not tiny */
 textarea:not([rows]) {
   min-height: 10em;
 }
@@ -143,6 +143,93 @@ body {
   font-size: 16px;
 }
 
+/* ----NAVBAR---- */
+
+header {
+  background-color: #fff;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu{
+  display: flex;
+  top: 100%;
+  justify-content: center;
+  align-items: left;
+  gap: 60px;
+}
+
+.nav-branding {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #333;
+}
+
+@media (max-width: 768px){
+  .hamburger{
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu{
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    text-align: left;
+    transition: 0.3s;
+  }
+
+  .nav-item{
+    margin: 15px 0;
+  }
+  .nav-menu.active{
+    left: 0;
+  }
+}
+
+/* ----NAVBAR---- */
+
 /* ----HEADER---- */
 
 .header {
@@ -174,3 +261,48 @@ body {
 }
 
 /* ----HEADER---- */
+
+/* ----FOOTER---- */
+footer {
+  padding-top: 2rem;
+}
+.newsletter-section {
+  border-top: 1px solid #333; 
+}
+.newsletter-section,
+.help-section,
+.legal-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  border-bottom: 1px solid #333;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+.newsletter-section img,
+.help-section img,
+.legal-section img {
+  margin-left: auto; 
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.contact-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+}
+footer img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.contact-section img {
+  width: 2rem;
+  height: 2rem;
+}
+.newsletter-section p,
+.help-section p,
+.legal-section p {
+  margin: 0;
+}
+/* ----FOOTER---- */
+
