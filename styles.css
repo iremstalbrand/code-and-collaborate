@@ -97,6 +97,7 @@ body {
   justify-content: space-between;
   border-bottom: 1.5px solid black;
   border-right: 1.5px solid black;
+  position: relative;
 }
 
 .product-card img {
@@ -269,47 +270,37 @@ a{
 
 /* ----HEADER---- */
 
-/* ----FOOTER---- */
 
-footer {
-  padding-top: 2rem;
+
+/* Save button */
+.save-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s;
+    z-index: 2;
 }
-.newsletter-section {
-  border-top: 1px solid #333; 
+
+/* Hover effect */
+.save-btn:hover {
+    transform: scale(1.2);
 }
-.newsletter-section,
-.help-section,
-.legal-section {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; 
-  border-bottom: 1px solid #333;
-  padding: 1rem 1rem 0.5rem 1rem;
+
+
+  /* Default save (outline) */
+.save-btn .save-icon {
+    width: 100%;
+    height: 100%;
+    stroke: #000;
+    fill: none; 
+    transition: all 0.3s;
 }
-.newsletter-section img,
-.help-section img,
-.legal-section img {
-  margin-left: auto; 
-  width: 1.5rem;
-  height: 1.5rem;
+
+/* Active heart (filled) */
+.save-btn.active .save-icon {
+    fill: #000;       
+    stroke: #000;     
 }
-.contact-section {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1rem;
-}
-footer img {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-.contact-section img {
-  width: 2rem;
-  height: 2rem;
-}
-.newsletter-section p,
-.help-section p,
-.legal-section p {
-  margin: 0;
-}
-/* ----FOOTER---- */
