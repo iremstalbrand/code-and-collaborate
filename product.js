@@ -71,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (addCartBtn) {
         addCartBtn.addEventListener("click", () => {
           addToBag(product);
-          alert(`${product.title} added to cart!`);
         });
       }
 
