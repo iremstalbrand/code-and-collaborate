@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 160px); /* header + footer yüksekliği kadar boşluk bırak */
+  min-height: calc(100vh - 160px); 
   gap: 3rem;
   text-align: center;
   margin-top: 3rem;
