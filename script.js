@@ -120,9 +120,6 @@ function renderProducts() {
       window.location.href = `product.html?id=${product.id}`;
     });
     
-    card.addEventListener('click', () => {
-      window.location.href = `product.html?id=${product.id}`;
-    });
 
     grid.appendChild(card);
   });
