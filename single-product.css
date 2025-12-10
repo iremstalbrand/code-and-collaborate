@@ -37,6 +37,16 @@
   font-weight: bold;
 }
 
+.product-sale-price {
+  font-size: 14px;
+  color: #e90000;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+}
+
 .add-cart-btn {
   background: #000000;
   color: #FFFFFF;
@@ -167,4 +177,29 @@
 /* drop down*/
 .accordion-item.active .accordion-content {
   max-height: 500px;
+}
+
+.single-product {
+  position: relative; /* This allows absolute positioning of children */
+}
+
+.save-btn {
+    position: absolute;
+    top: 10px;
+    right: 45px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    z-index: 2;
+}
+
+.save-btn .save-icon path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2;
+}
+
+.save-btn.active .save-icon path {
+  fill: #000;
+  stroke: #000;
 }
