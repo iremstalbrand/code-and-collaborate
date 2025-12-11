@@ -80,3 +80,5 @@ document.querySelectorAll(".add-cart-btn").forEach(btn => {
 }
 
 document.addEventListener("DOMContentLoaded", renderFavorites);
+
+
