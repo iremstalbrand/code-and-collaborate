@@ -33,32 +33,9 @@ fetch("products.json")
   .then((response) => response.json())
   .then((data) => {
     products = data;
-    addSaleBanner();
     renderProducts();
   })
   .catch((err) => console.error("Could not load JSON:", err));
-
-function addSaleBanner() {
-  const grid = document.getElementById("product-grid");
-  const banner = document.createElement("div");
-  banner.className = "sale-banner";
-  const container = document.createElement("div");
-  container.className = "sale-slider";
-  const images = ["images/SALE.png", "images/NEW IN.png"];
-  images.forEach((src) => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.className = "slide-img";
-    container.appendChild(img);
-  });
-  banner.appendChild(container);
-  grid.parentNode.insertBefore(banner, grid);
-  let index = 0;
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    container.style.transform = `translateX(-${index * 100}%)`;
-  }, 3000);
-}
 
 function addSaveButtonListeners() {
   document.querySelectorAll(".save-btn").forEach((save) => {
