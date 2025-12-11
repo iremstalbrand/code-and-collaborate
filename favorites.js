@@ -105,3 +105,5 @@ function showToast(message, duration = 2500) {
 }
 
 document.addEventListener("DOMContentLoaded", renderFavorites);
+
+
