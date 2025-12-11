@@ -173,6 +173,7 @@ body {
   height: 200px;
   overflow: hidden;
   position: relative;
+  margin: 20px 0;
 }
 
 .banner-slider {
