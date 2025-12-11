@@ -11,9 +11,9 @@ if (hamburger && navMenu) {
 }
 
 let products = [];
-let itemsToShow = 8; // 4 rows × 2 columns
-let showingSaleOnly = false; // Flag to indicate sale filter is active
-let showingNewOnly = false;  // Flag to indicate new in filter is active
+let itemsToShow = 8;
+let showingSaleOnly = false;
+let showingNewOnly = false;
 
 function getFavoritesFromStorage() {
   try {
@@ -28,16 +28,46 @@ function isFavorited(id) {
   return favs.some((f) => (typeof f === "object" ? f.id == id : f == id));
 }
 
-// Load products.json
+// -------------------------
+// LOAD PRODUCTS
+// -------------------------
 fetch("products.json")
   .then((response) => response.json())
   .then((data) => {
     products = data;
     addSaleBanner();
-    renderProducts();
+    applyURLFilter(); // << USE URL FILTER HERE
   })
   .catch((err) => console.error("Could not load JSON:", err));
 
+// -------------------------
+// APPLY URL FILTER
+// -------------------------
+function applyURLFilter() {
+  const params = new URLSearchParams(window.location.search);
+  const filter = params.get("filter");
+
+  if (filter === "sale") {
+    showingSaleOnly = true;
+    showingNewOnly = false;
+    const saleProducts = products.filter((p) => p.sale_price);
+    renderProducts(saleProducts);
+    return;
+  }
+
+  if (filter === "new") {
+    showingSaleOnly = false;
+    showingNewOnly = true;
+    const newProducts = products.filter((p) => !p.sale_price);
+    renderProducts(newProducts);
+    return;
+  }
+
+  // Default: no filter
+  renderProducts(products);
+}
+
+// -------------------------
 function addSaleBanner() {
   const grid = document.getElementById("product-grid");
   const banner = document.createElement("div");
@@ -53,6 +83,7 @@ function addSaleBanner() {
   });
   banner.appendChild(container);
   grid.parentNode.insertBefore(banner, grid);
+
   let index = 0;
   setInterval(() => {
     index = (index + 1) % images.length;
@@ -63,7 +94,7 @@ function addSaleBanner() {
 function addSaveButtonListeners() {
   document.querySelectorAll(".save-btn").forEach((save) => {
     save.addEventListener("click", (event) => {
-      event.stopPropagation(); // Prevent navigation
+      event.stopPropagation();
       save.classList.toggle("active");
       const product = products.find((p) => p.id == save.dataset.id);
       toggleFavorite(product);
@@ -71,12 +102,15 @@ function addSaveButtonListeners() {
   });
 }
 
+// -------------------------
+// RENDER PRODUCTS
+// -------------------------
 function renderProducts(list = products) {
   const grid = document.getElementById("product-grid");
   grid.innerHTML = "";
 
-  // Determine visible products
-  const visibleProducts = (showingSaleOnly || showingNewOnly) ? list : list.slice(0, itemsToShow);
+  const visibleProducts =
+    showingSaleOnly || showingNewOnly ? list : list.slice(0, itemsToShow);
 
   visibleProducts.forEach((product) => {
     const card = document.createElement("div");
@@ -127,36 +161,43 @@ function renderProducts(list = products) {
 
   addSaveButtonListeners();
 
-  // Hide load more button if any filter is active
   const loadMoreBtn = document.getElementById("load-more-btn");
   if (loadMoreBtn) {
-    loadMoreBtn.style.display = (showingSaleOnly || showingNewOnly) ? "none" : "block";
+    loadMoreBtn.style.display =
+      showingSaleOnly || showingNewOnly ? "none" : "block";
   }
 }
 
-// Load more button
+// -------------------------
+// LOAD MORE
+// -------------------------
 const loadMoreBtn = document.getElementById("load-more-btn");
 if (loadMoreBtn) {
   loadMoreBtn.addEventListener("click", () => {
-    itemsToShow += 8; // 4 more rows
+    itemsToShow += 8;
     renderProducts();
   });
 }
 
-// Sale filter button
+// -------------------------
+// SALE BUTTON
+// -------------------------
 const saleButton = document.getElementById("sale-btn");
 saleButton.addEventListener("click", () => {
   showingSaleOnly = true;
-  showingNewOnly = false; // Disable new in filter
+  showingNewOnly = false;
   const saleProducts = products.filter((item) => item.sale_price);
   renderProducts(saleProducts);
 });
 
-// New filter button
+// -------------------------
+// NEW IN BUTTON
+// -------------------------
 const newInButton = document.getElementById("newIn-btn");
 newInButton.addEventListener("click", () => {
-  showingSaleOnly = false; // Disable sale filter
-  showingNewOnly = true;    // Enable new in filter
+  showingSaleOnly = false;
+  showingNewOnly = true;
   const newProducts = products.filter((item) => !item.sale_price);
   renderProducts(newProducts);
 });
+
