@@ -115,19 +115,23 @@ body {
 .product-title {
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #747474;
+  color: #000000;
 }
 
 .product-price {
   font-size: 14px;
   display: flex;
   gap: 10px;
-  color: #434343;
+  color: #000000;
 }
 
 .product-sale-price {
   font-size: 14px;
-  color: #e90000;
+  font-weight: 600;
+  color: #ffffff;
+  padding-left: 4px;
+  padding-right: 5px;
+  background-color: #e90000;
 }
 
 .old-price {
@@ -135,10 +139,15 @@ body {
   color: #888;
 }
 
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
 #load-more-btn {
-  width: 100%;
+  width: 15rem;
   padding: 14px;
-  margin: 15px 0;
   border: none;
   border-radius: 6px;
   background: #000;
@@ -153,12 +162,16 @@ body {
 
 .product-price {
   font-size: 10px;
-  color: #434343;
+  color: #000000;
 }
 
 .product-sale-price {
   font-size: 10px;
-  color: #e90000;
+  font-weight: 600;
+  color: #ffffff;
+  padding-left: 4px;
+  padding-right: 5px;
+  background-color: #e90000;
 }
 
 .product-title {
