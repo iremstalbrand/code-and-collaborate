@@ -81,7 +81,8 @@ export function productLoad() {
           // update storage
           toggleFavorite(product);
           // update UI state immediately
-          saveBtn.classList.toggle("active");
+ const nowActive = saveBtn.classList.toggle("active");
+          showToast(nowActive ? "Added to favorites" : "Removed from favorites", { target: saveBtn, duration: 1600 });
         });
       }
       
@@ -96,24 +97,29 @@ export function productLoad() {
         });
       }
 
-function showToast(message, { duration = 2200, target = null } = {}) {
+function showToast(message, { duration = 2000, target = null } = {}) {
   const toast = document.createElement("div");
-  toast.className = "toast float";
+  toast.className = "toast";
   toast.textContent = message;
   document.body.appendChild(toast);
 
-  if (target) {
+  toast.style.zIndex = 9999;
+  toast.style.whiteSpace = 'nowrap';
+
+
+  if (target instanceof Element) {
     const rect = target.getBoundingClientRect();
+    toast.classList.add('center');
     toast.style.position = "fixed";
     toast.style.left = (rect.left + rect.width / 2) + "px"; 
-    toast.style.bottom = rect.top + "px"; 
+     toast.style.top = Math.max(8, rect.top - 36) + 'px';
   } else {
+    toast.classList.add('fixed');
     toast.style.position = "fixed";
     toast.style.right = "18px";
     toast.style.bottom = "24px";
   }
-  toast.style.zIndex = 9999;
-
+ 
   requestAnimationFrame(() => toast.classList.add("show"));
 
   setTimeout(() => {
