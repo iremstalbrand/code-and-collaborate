@@ -73,7 +73,7 @@ export function productLoad() {
         </div>
       `;
 
-            // FAVORITE (heart) handler: toggle storage and UI
+
       const saveBtn = detailsContainer.querySelector(".save-btn");
       if (saveBtn) {
         saveBtn.addEventListener("click", (e) => {
@@ -85,7 +85,7 @@ export function productLoad() {
         });
       }
       
-      // ADD TO CART EVENT
+
  const addCartBtn = detailsContainer.querySelector(".add-cart-btn");
       if (addCartBtn) {
         addCartBtn.addEventListener("click", (e) => {
@@ -96,19 +96,17 @@ export function productLoad() {
         });
       }
 
-      // Floating toast implementation (positions over target using fixed coords)
 function showToast(message, { duration = 2200, target = null } = {}) {
   const toast = document.createElement("div");
   toast.className = "toast float";
   toast.textContent = message;
   document.body.appendChild(toast);
 
-  // position using viewport coords (fixed) so transforms/ancestors won't move it
   if (target) {
     const rect = target.getBoundingClientRect();
     toast.style.position = "fixed";
-    toast.style.left = (rect.left + rect.width / 2) + "px"; // center X
-    toast.style.bottom = rect.top + "px"; // above target
+    toast.style.left = (rect.left + rect.width / 2) + "px"; 
+    toast.style.bottom = rect.top + "px"; 
   } else {
     toast.style.position = "fixed";
     toast.style.right = "18px";
@@ -116,7 +114,6 @@ function showToast(message, { duration = 2200, target = null } = {}) {
   }
   toast.style.zIndex = 9999;
 
-  // show with CSS transition
   requestAnimationFrame(() => toast.classList.add("show"));
 
   setTimeout(() => {
